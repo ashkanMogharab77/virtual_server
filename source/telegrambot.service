@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram Bot Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/virtual_server
+ExecStart=/root/virtual_server/venv/bin/python3 bot.py
+Restart=always
+User=root
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
